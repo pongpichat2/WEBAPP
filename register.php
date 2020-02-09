@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    //session_start();
     $name =  $_POST["NAMEA"];
     $username = $_POST["Username"];
     $password = $_POST["Password"];
@@ -7,11 +7,25 @@
     $Age = $_POST["Age"];
 
 
-    require("conn.php");
+    //require("conn.php");
+    
+    $Serverbd = "localhost";
+    $user = "root";
+    $pass = "";
+    $dbname = "webdb";
+
+    $conn = new mysqli($Serverbd, $user, $pass, $dbname);
+    mysqli_set_charset($conn, "utf8");
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } //จบการทำงาน
+    
 
     
     //เพิ่มข้อมูล
-    $sql = "INSERT INTO registera (NAME, Username, PASSWORD, ConfirmPassword, Age)
+    $sql = "INSERT INTO register (NAME, Username, PASSWORD, ConfirmPassword, Age)
                     Value ('$name', '$username', '$password', '$confirmpass', '$Age')";
 
     if ($_POST["Password"] != $_POST["ConfirmPassword"] ){
@@ -21,7 +35,7 @@
 
                      
     if ($conn->query($sql) === TRUE) {
-        header("Location:login.html");
+        header("Location:index.html");
     } 
     else {
         echo "Error: " . $sql . "<br>" . $conn->error;

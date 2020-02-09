@@ -1,16 +1,14 @@
 <?php
     require("conn.php");
-    session_start();
+    //session_start();
     $username = $_POST['Username'];
     $password = $_POST['Password'];
     
     
     
-    
 
-    
     //เช็ค ข้อมูลในDatabase ใน ATB1 Username and Password
-    $query = "SELECT * FROM registera WHERE Username= '".$username."' AND PASSWORD = '".$password."' limit 1";
+    $query = "SELECT * FROM register WHERE Username= '".$username."' AND PASSWORD = '".$password."' limit 1";
 
     //ถ้าเจอ
     $result = mysqli_query($conn, $query );
@@ -24,10 +22,10 @@
             echo "Username and Password Incorrect !";
         }
         else{
-            $_SESSION['Username'] = $objResult['Username'];
-            $_SESSION['Status'] = $objResult['Status'];
+            //$_SESSION['Username'] = $objResult['Username'];
+           // $_SESSION['Status'] = $objResult['Status'];
 
-            session_write_close();
+            //session_write_close();
             header("Location:Mungmee.html");
             
 

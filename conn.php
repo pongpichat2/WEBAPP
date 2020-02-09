@@ -2,7 +2,7 @@
     $Serverbd = "localhost";
     $user = "root";
     $pass = "";
-    $dbname = "nook";
+    $dbname = "webdb";
 
     $conn = new mysqli($Serverbd, $user, $pass, $dbname);
 
