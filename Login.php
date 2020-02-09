@@ -1,14 +1,10 @@
 <?php
+    require("conn.php");
     session_start();
     $username = $_POST['Username'];
     $password = $_POST['Password'];
     
-    $Serverbd = "localhost";
-    $user = "root";
-    $pass = "";
-    $dbname = "nook";
-
-    $conn = new mysqli($Serverbd, $user, $pass, $dbname);
+    
     
     
 
@@ -32,16 +28,12 @@
             $_SESSION['Status'] = $objResult['Status'];
 
             session_write_close();
-            if($objResult['Status'] == 'Teacher'){
-                header("Location:Techer.html");
-            }
-            else{
-                header("Location:Student.html");
-            }
+            header("Location:Mungmee.html");
+            
 
 
         }
-        //header('Location:Techer.html');
+        
         
     }
     else{
