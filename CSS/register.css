@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(226, 127, 14);
+    background: linear-gradient(45deg, rgb(233, 155, 37) 10%, rgb(219, 192, 115));
     font-family: 'Courier Prime', monospace;
 }
 
