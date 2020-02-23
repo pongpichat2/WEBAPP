@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="CSS/register.css">
     <link href="https://fonts.googleapis.com/css?family=Courier+Prime&display=swap" rel="stylesheet">
     <title>Register</title>
+
+    <script>
+        function confirmSubmit(){
+            return confirm("คุณต้องการยืนยันใช่ไหม ???");
+        }
+    </script>
 </head>
 <body>
     <form action="register.php" method="POST" >
@@ -18,7 +24,7 @@
             <input type="password" name="ConfirmPassword"   placeholder="Confirm-Password" required class="label-input"> <br>
             <input type="text" name="Age"  placeholder="Age" required class="label-input"> <br>
 
-            <input type="submit" class="boxsubmit" value="Submit"></input><br><br>
+            <input type="submit" class="boxsubmit" value="Submit" onclick="return confirmSubmit()"></input><br><br>
             <a href="index.html" class="gologin">Back to login !</a>
         </div>
     </form>
