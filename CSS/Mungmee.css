@@ -16,6 +16,7 @@ body {
   
 .sidepanel h1 {
     color: floralwhite;
+    margin-left: 20px;
 }
 .sidepanel a {
     padding: 8px 8px 8px 32px;
@@ -38,6 +39,7 @@ body {
   }
   
 .openbtn {
+    margin: auto;
     font-size: 20px;
     cursor: pointer;
     background-color: #111;

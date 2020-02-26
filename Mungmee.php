@@ -1,7 +1,7 @@
 <?php 
         session_start();
         require("conn.php");
-        // echo $_SESSION['username'];
+        
         
 ?>
 
@@ -29,10 +29,11 @@
 
 <body>
     <button class="openbtn" onclick="openNav()">☰</button>
+
     <div id="mySidebar" class="sidepanel">
         <h1>Username : <?php echo $_SESSION['username'];?></h1>
         <a href="#" class="closebtn" onclick="closeNav()">×</a>  
-        <a href="#">About</a>
+        <a href="#">เช็คค่าหอ</a>
         <a href="#">Services</a>
         <a href="#">Clients</a>
         <a href="#">Contact</a>
