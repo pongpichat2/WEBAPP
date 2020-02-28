@@ -31,13 +31,13 @@
     <button class="openbtn" onclick="openNav()">☰</button>
 
     <div id="mySidebar" class="sidepanel">
-        <h1>Username : <?php echo $_SESSION['username'];?></h1>
+        <h1>NAME : <?php echo $_SESSION['name'];?></h1>
         <a href="#" class="closebtn" onclick="closeNav()">×</a>  
         <a href="#">เช็คค่าหอ</a>
         <a href="#">Services</a>
         <a href="#">Clients</a>
         <a href="#">Contact</a>
-        <a href="index.html">Log Out</a>
+        <a href="index.html" <?php session_unset(); session_destroy(); ?>>Log Out</a>
     </div>
 
 </body>
