@@ -18,6 +18,8 @@
 
             $_SESSION['username'] = $username;
             $_SESSION['name'] = $objResult['NAME'];
+            $_SESSION['IDRoom'] = $objResult['IDRoom'];
+            $_SESSION['Status'] = $objResult['Status'];
             if ($objResult["Status"] == "user"){ 
             header("Location:HUser.php");}
             else{

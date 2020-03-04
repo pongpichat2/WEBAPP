@@ -23,6 +23,12 @@
             document.getElementById("main").style.marginLeft= "0";
             }
 </script>
+<style>
+    .sidepanel h2{
+        color: floralwhite;
+        margin-left: 20px;
+    }
+</style>
 
 </head>
 
@@ -31,6 +37,7 @@
 
     <div id="mySidebar" class="sidepanel">
         <h1>NAME : <?php echo $_SESSION['name'];?></h1>
+        <h2>STATUS : <?php echo $_SESSION['Status'];?></h2>
         <a href="#" class="closebtn" onclick="closeNav()">×</a>  
         <a href="#">เช็คค่าหอ</a>
         <a href="#">Services</a>

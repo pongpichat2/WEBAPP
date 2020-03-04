@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="CSS/adduser.css">
     <link href="https://fonts.googleapis.com/css?family=Courier+Prime&display=swap" rel="stylesheet">
-    <title>Register</title>
+    <title>Add Renter</title>
 
     <script>
         function confirmSubmit(){
@@ -34,8 +34,9 @@
 
     <div id="mySidebar" class="sidepanel">
         <h1>NAME :  <?php echo $_SESSION['name'];?></h1>
-        <a href="#" class="closebtn" onclick="closeNav()">×</a>  
-        <a href="#">เพิ่มผู้เช่า</a>
+        <a href="#" class="closebtn" onclick="closeNav()">×</a>
+        <a href="HAdmin.php">Home</a>  
+        <a href="#">Add Renter</a>
         <a href="#">ค่าหอ</a>
         <a href="#">Contact</a>
         <a href="index.html" >Log Out</a>
@@ -44,7 +45,7 @@
     <form action="register.php" method="GET" >
         <div class="container">
             
-            <h1>เพิ่มผู้เช่า</h1>
+            <h1>Add Renter</h1>
             <input type="text" name="NAMEA"  placeholder="Name" required class="label-input"> <br>
             <input type="text" name="Username" placeholder="Username" required class="label-input"> <br>
             <input type="password" name="Password" placeholder="Password" required class="label-input"> <br>
