@@ -1,8 +1,12 @@
 body {
     /* background: linear-gradient(45deg, rgb(219, 192, 115) 10%, rgb(233, 155, 37) 70%); */
     font-family: 'Courier Prime', monospace;
-    background: url("main.jpg");
-    
+    background: url("index.jpg");
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
@@ -11,7 +15,7 @@ body {
     background: #fafafa;
     text-align: center;
     border: 1px solid #dddddd;
-    margin: 12% 35%;
+    margin: 17% 35%;
     box-shadow:0 0 16px rgb(48, 46, 46);
     position: fixed;
     

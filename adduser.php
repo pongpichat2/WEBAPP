@@ -30,8 +30,8 @@
     
 </head>
 <body>
+    <header>
     <button class="openbtn" onclick="openNav()">☰</button>
-
     <div id="mySidebar" class="sidepanel">
         <h1>NAME :  <?php echo $_SESSION['name'];?></h1>
         <a href="#" class="closebtn" onclick="closeNav()">×</a>
@@ -58,6 +58,7 @@
             
         </div>
     </form>
+    </header>
    
 </body>
 </html>

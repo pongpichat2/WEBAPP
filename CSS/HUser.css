@@ -1,7 +1,13 @@
 body {
     font-family: 'Courier Prime', ;
-    background: url("main.jpg");
+    background: url("home.jpg");
     /* background: linear-gradient(45deg, rgb(233, 155, 37) 10%, rgb(219, 192, 115)); */
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    
 }
 .sidepanel  {
     width: 0;
