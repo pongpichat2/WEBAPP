@@ -1,20 +1,20 @@
 body {
-    background: linear-gradient(45deg, rgb(219, 192, 115) 10%, rgb(233, 155, 37) 70%);
+    /* background: linear-gradient(45deg, rgb(219, 192, 115) 10%, rgb(233, 155, 37) 70%); */
     font-family: 'Courier Prime', monospace;
-    /* background: url("main.jpg"); */
+    background: url("main.jpg");
     
 }
 
 .container {
     width: 450px;
-    height: 300px;
+    height: 280px;
     background: #fafafa;
     text-align: center;
     border: 1px solid #dddddd;
     margin: 12% 35%;
     box-shadow:0 0 16px rgb(48, 46, 46);
     position: fixed;
-    /* opacity: 0.5; */
+    
 }
 
 .label-input {

@@ -19,7 +19,7 @@ body {
     margin: 12% 35%;
     box-shadow:0 0 16px rgb(48, 46, 46);
     position: fixed;
-    
+    opacity: 0.5;
 }
 
 .label-input {
