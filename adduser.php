@@ -1,6 +1,11 @@
 <?php
     session_start();
     require("conn.php");
+
+    // if no session then back to login.php
+    if(!isset($_SESSION['username'])) {
+        header("Location:index.html");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,16 +35,15 @@
     
 </head>
 <body>
-    <header>
     <button class="openbtn" onclick="openNav()">☰</button>
     <div id="mySidebar" class="sidepanel">
         <h1>NAME :  <?php echo $_SESSION['name'];?></h1>
         <a href="#" class="closebtn" onclick="closeNav()">×</a>
         <a href="HAdmin.php">Home</a>  
         <a href="#">Add Renter</a>
-        <a href="#">ค่าหอ</a>
+        <a href="addprice.php">ค่าหอ</a>
         <a href="#">Contact</a>
-        <a href="index.html" >Log Out</a>
+        <a href="Logout.php" >Log Out</a>
     </div>
 
     <form action="register.php" method="GET" >
@@ -58,7 +62,7 @@
             
         </div>
     </form>
-    </header>
+    
    
 </body>
 </html>

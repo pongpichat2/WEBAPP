@@ -7,12 +7,7 @@ body {
     background-size: cover;
     background-position: center;
 }
-/* header{
-  background-image: url("main.jpg");
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-} */
+
 .sidepanel  {
     width: 0;
     position: fixed;
@@ -49,7 +44,7 @@ body {
     right: 25px;
     font-size: 50px;
   }
-  
+
 .openbtn {
     margin: auto;
     font-size: 20px;
@@ -58,36 +53,9 @@ body {
     color: white;
     padding: 10px 15px;
     border: none;
-  }
+}
   
 .openbtn:hover {
     background-color:#444;
-  }
-.container {
-    width: 450px;
-    height: 420px;
-    background: #fafafa;
-    text-align: center;
-    border: 1px solid #dddddd;
-    margin: 12% 35%;
-    box-shadow:0 0 16px rgb(48, 46, 46);
-    position: fixed;
-    
 }
 
-.label-input {
-    margin-bottom: 0.6rem;
-    background: #fafafa;
-    border: 1.5px solid #e0dddd;
-    padding: 12px;
-    width: 50%;
-}
-
-.boxsubmit {
-    background: #44b1c7;
-    border: 1px solid #ddd;
-    color: #ffffff;
-    padding: 10px;
-    width: 55% ;
-    
-}  

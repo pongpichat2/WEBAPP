@@ -1,6 +1,10 @@
 <?php
     require("conn.php");
     session_start();
+
+    if(!isset($_SESSION['username'])) {
+        header("Location:index.html");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,9 +41,9 @@
         <a href="#" class="closebtn" onclick="closeNav()">×</a>
         <a href="HAdmin.php">Home</a>  
         <a href="adduser.php">Add Renter</a>
-        <a href="#">ค่าหอ</a>
+        <a href="addprice.php">ค่าหอ</a>
         <a href="#">Contact</a>
-        <a href="index.html" >Log Out</a>
+        <a href="Logout.php" >Log Out</a>
     </div>
 </body>
 </html>

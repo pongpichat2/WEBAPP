@@ -13,13 +13,15 @@
     //เพิ่มข้อมูล
     $sql = "INSERT INTO register (NAME, Username, PASSWORD, IDRoom, Status)
                     Value ('$name', '$username', '$password', '$room', '$status')";
+    
+    $sql1 = "INSERT INTO room (IDRoom) Value ('$room')";
 
 
 
                      
     if ($conn->query($sql) == TRUE) {
-        
-        header("Location:index.html");
+        if($conn->query($sql1) == TRUE){
+        header("Location:index.html");}
     } 
     else {
         echo "Error: " . $sql . "<br>" . $conn->error;

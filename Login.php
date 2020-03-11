@@ -9,7 +9,7 @@
     $sql = "SELECT * FROM register WHERE Username= '".$username."' AND PASSWORD = '".$password."' limit 1";
 
     //ถ้าเจอ
-    $result = mysqli_query($conn, $sql );
+    $result = mysqli_query($conn, $sql);
     $objResult = mysqli_fetch_array($result);
     
     if (mysqli_num_rows($result) == 1){

@@ -2,6 +2,9 @@
         session_start();
         require("conn.php");
 
+        if(!isset($_SESSION['username'])) {
+            header("Location:index.html");
+        }
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +45,7 @@
         <a href="#">เช็คค่าหอ</a>
         <a href="#">Services</a>
         <a href="#">Contact</a>
-        <a href="index.html" >Log Out</a>
+        <a href="Logout.php" >Log Out</a>
     </div>
 
 </body>
