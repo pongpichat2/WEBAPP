@@ -1,6 +1,6 @@
 body {
     /* background: linear-gradient(45deg, rgb(219, 192, 115) 10%, rgb(233, 155, 37) 70%); */
-    font-family: 'Courier Prime', monospace;
+    
     background: url("index.jpg");
     height: 100vh;
     margin: 0;
@@ -12,13 +12,14 @@ body {
 .container {
     width: 450px;
     height: 280px;
-    background: #fafafa;
+    background:rgb(255, 255, 255, 0.6);
     text-align: center;
     border: 1px solid #dddddd;
+    border-radius: 5px;
     margin: 17% 35%;
     box-shadow:0 0 16px rgb(48, 46, 46);
     position: fixed;
-    
+    font-family: 'Courier Prime', monospace;
 }
 
 .label-input {
@@ -27,6 +28,11 @@ body {
     border: 1.5px solid #e0dddd;
     padding: 12px;
     width: 50%;
+    transition: 0.4s;
+    font-family: 'Gotu', sans-serif;
+}
+.label-input:focus{
+    border: 3px solid rgb(110, 108, 243);
 }
 
 .boxsubmit {
@@ -36,6 +42,7 @@ body {
     padding: 10px;
     width: 55% ;
     text-transform: uppercase;
+    font-family: 'Gotu', sans-serif;
 }
 
 

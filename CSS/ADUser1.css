@@ -14,9 +14,8 @@ body {
   padding: 0;
 } */
 .sidepanel  {
-    width: 0;
+    width: 300px;
     position: fixed;
-    z-index: 1;
     height: 100%;
     top: 0;
     left: 0;
@@ -24,11 +23,16 @@ body {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    font-family: 'Gotu', sans-serif;
   }
   
 .sidepanel h1 {
     color: floralwhite;
     margin-left: 20px;
+}
+.sidepanel h2 {
+  color: floralwhite;
+  margin-left: 20px;
 }
 .sidepanel a {
     padding: 8px 8px 8px 32px;
@@ -37,6 +41,7 @@ body {
     color: #818181;
     display: block;
     transition: 0.3s;
+    font-family: 'Mali', cursive;
   }
   
 .sidepanel a:hover {
@@ -65,14 +70,15 @@ body {
   }
 .container {
     width: 450px;
-    height: 420px;
-    background: #fafafa;
+    height: 450px;
+    background: rgb(255, 255, 255, 0.6);
     text-align: center;
     border: 1px solid #dddddd;
-    margin: 12% 35%;
+    border-radius: 5px ;
+    margin: 8% 39%;
     box-shadow:0 0 16px rgb(48, 46, 46);
     position: fixed;
-    
+    font-family: 'Gotu', sans-serif;
 }
 
 .label-input {
@@ -81,6 +87,13 @@ body {
     border: 1.5px solid #e0dddd;
     padding: 12px;
     width: 50%;
+    outline: none;
+    transition: 0.2s;
+    font-family: 'Gotu', sans-serif;
+}
+.label-input:focus{
+  border: 3px solid rgb(110, 108, 243);
+  
 }
 
 .boxsubmit {
@@ -89,5 +102,14 @@ body {
     color: #ffffff;
     padding: 10px;
     width: 55% ;
-    
+    font-family: 'Gotu', sans-serif;
+    transition: 0.5s;
+}
+.boxsubmit:hover{
+  width: 30% ;
+  border: 3px solid;
+  border-radius:20px ;
+  color: #000;
+  background: rgb(208, 230, 88);
+  font-size: 18px;
 }  

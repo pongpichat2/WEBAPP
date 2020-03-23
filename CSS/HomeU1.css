@@ -1,0 +1,113 @@
+body {
+
+    background: url("homeUser.jpg");
+    /* background: linear-gradient(45deg, rgb(233, 155, 37) 10%, rgb(219, 192, 115)); */
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    
+}
+.sidepanel  {
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    font-family: 'Gotu', sans-serif;
+  }
+  
+.sidepanel h1 {
+    color: floralwhite;
+    margin-left: 20px;
+   
+}
+
+.sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    font-family: 'Mali', cursive;
+}
+  
+.sidepanel a:hover {
+    color: #f1f1f1;
+}
+  
+.sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 50px;
+  }
+  
+.openbtn {
+    margin: auto;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+.openbtn:hover {
+    background-color:#444;
+  }
+.Billpay{
+  width: 500px;
+  height: 550px;
+  background-color:rgb(255, 255, 255, 0.9);
+  margin-left: 35%;
+  margin-top: 3.5%;
+  border: 5px solid #111;
+  border-radius: 5px;
+  font-family: 'Mali', cursive;
+}
+.Billpay h2{
+  text-align: center;
+}
+.Billpay h3 {
+  margin: 10px 15%;
+}
+.Billpay b{
+  margin-left: 50%;
+  font-size: 20px;
+}
+.Billpay h3 input[type=text]{
+  text-align: center;
+  border: 2px solid #111;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius:10px ;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  background: rgb(248, 102, 76, 0.8);
+  font-family: 'Mali', cursive;
+}
+.Billpay button{
+  margin-left: 34%;
+  width: 150px;
+  height: 50px;
+  background: none;
+  border: 4px solid #f44336;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  transition-duration: 0.4s;
+  font-family: 'Gotu', sans-serif;
+}
+
+.Billpay button:hover{
+  background-color: #f44336;
+  color: white;
+  border-radius:25px ;
+}

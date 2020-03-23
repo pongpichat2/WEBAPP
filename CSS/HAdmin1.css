@@ -1,16 +1,14 @@
 body {
     font-family: 'Courier Prime', ;
     background-image: url("home.jpg");
-    height: 100vh;
-    margin: 0;
-    padding: 0;
     background-size: cover;
     background-position: center;
+    height: 100vh;
+    margin: 0;
 }
-.sidepanel  {
-    width: 0;
+.sidepanel{
+    width: 300px;
     position: fixed;
-    z-index: 1;
     height: 100%;
     top: 0;
     left: 0;
@@ -18,11 +16,16 @@ body {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    font-family: 'Gotu', sans-serif;
   }
   
 .sidepanel h1 {
     color: floralwhite;
     margin-left: 20px;
+}
+.sidepanel h2 {
+  color: floralwhite;
+  margin-left: 20px;
 }
 
 .sidepanel a {
@@ -32,6 +35,7 @@ body {
     color: #818181;
     display: block;
     transition: 0.3s;
+    font-family: 'Mali', cursive;
   }
   
 .sidepanel a:hover {
@@ -46,7 +50,7 @@ body {
   }
   
 .openbtn {
-    margin: auto;
+    margin: 0;
     font-size: 20px;
     cursor: pointer;
     background-color: #111;
@@ -58,3 +62,24 @@ body {
 .openbtn:hover {
     background-color:#444;
   }
+
+.cos2{
+    border: 3px solid rgb(0, 0, 0);
+    width: 100px;
+    padding: 0;
+    
+}
+.HeadADD .cos1{
+    background: linear-gradient(90deg, rgba(19,178,90,1) 0%, rgba(50,175,119,1) 24%, rgba(0,212,255,1) 100%);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border: 3px solid rgb(0, 0, 0);
+   
+}
+
+.HeadADD{
+    border-collapse: collapse;
+    width: 200px;
+    margin: 11% 23%;
+    text-align: center;
+}
