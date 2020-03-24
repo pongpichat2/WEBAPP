@@ -10,7 +10,7 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Mali&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/AddPrice3.css">
+    <link rel="stylesheet" href="CSS/AddPrice4.css">
 
     <script>
          function openNav() {
@@ -32,16 +32,12 @@
         <h1>NAME :  <?php echo $_SESSION['name'];?></h1>
         <h2>STATUS : <?php echo $_SESSION['Status'];?></h2>
         <a href="#" class="closebtn" onclick="closeNav()">×</a>
-        <a href="HAdmin.php">Home</a>  
+        <a href="HAdmin.php">รายชื่อผู้เช่า</a>  
         <a href="adduser.php">เพิ่มสมาชิก</a>
         <a href="#">ค่าหอ</a>
-        <a href="#">Contact</a>
         <a href="Logout.php" >Log Out</a>
     </div>
     
-    <?php
-        
-    ?>
     
     <div class="containerADD">
         <div class="textData">

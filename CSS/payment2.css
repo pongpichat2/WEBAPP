@@ -1,0 +1,176 @@
+body {
+
+    background: url("homeUser.jpg");
+    /* background: linear-gradient(45deg, rgb(233, 155, 37) 10%, rgb(219, 192, 115)); */
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+
+    
+}
+.sidepanel  {
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    font-family: 'Gotu', sans-serif;
+  }
+  
+.sidepanel h1 {
+    color: floralwhite;
+    margin-left: 20px;
+   
+}
+
+.sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    font-family: 'Mali', cursive;
+}
+  
+.sidepanel a:hover {
+    color: #f1f1f1;
+}
+  
+.sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 50px;
+  }
+  
+.openbtn {
+    margin: auto;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+.openbtn:hover {
+    background-color:#444;
+  }
+.sidepanel h2{
+    color: floralwhite;
+    margin-left: 20px;
+}
+.BillPay {
+    margin: 0 20%;
+    width: 1000px;
+    height: 650px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius:10px ;
+    box-shadow:0 0 20px rgb(112, 201, 89);
+}
+.Payment-Head{
+  text-align: center;
+  font-family: 'Gotu', sans-serif;
+  font-size: 40px;
+  color:red;
+}
+.Textpay{
+  font-family: 'Mali', cursive;
+  margin: 5% 5%;
+  font-size: 20px;
+  font-weight: bold;
+  width: 350px;
+  height: 150px;
+  background: none;
+}
+.Textshow{
+  margin: 6% 5%;
+  font-family: 'Mali', cursive;
+}
+.Textshow input[type=text]{
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  font-family: 'Mali', cursive;
+  transition: 0.5s;
+}
+.Textshow input[type=text]:hover{
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  color:red;
+  border: 2px solid red;
+}
+.Button{
+  margin: 15% 25%;
+  width: 550px;
+  height: 10%;
+  background: none;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.fa-facebook:hover{
+  border-radius:30px;
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  color: black;
+  border:2px solid;
+}
+.fa-instagram {
+  background: rgb(250, 79, 145) ;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.5s;
+  margin: 0 5%;
+  }
+.fa-instagram:hover{
+  border-radius:30px;
+  background: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+  color: black;
+  border:2px solid;
+}
+#Map{
+  float: right;
+  margin: 2% 2%;
+  height: 200px;
+  width: 30%;
+  background: none;
+  text-align: center;
+}
+#Map h2{
+  text-align: center;
+  font-family: 'Mali', cursive;
+}
+#googlemap{
+  height: 350px;
+  width: 100%;
+  border: 2px solid;
+}
+.headder h1{
+  width: 200px;
+  height: 70px;
+  background: none;
+  text-align: center;
+  margin: 0 35%;
+}

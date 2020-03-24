@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="CSS/ADUser1.css">
+    <link rel="stylesheet" href="CSS/ADUser2.css">
     <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Mali&display=swap" rel="stylesheet">
     <title>Add Renter</title>
@@ -41,17 +41,16 @@
         <h1>NAME :  <?php echo $_SESSION['name'];?></h1>
         <h2>STATUS : <?php echo $_SESSION['Status'];?></h2>
         <a href="#" class="closebtn" onclick="closeNav()">×</a>
-        <a href="HAdmin.php">Home</a>  
+        <a href="HAdmin.php">รายชื่อผู้เช่า</a>  
         <a href="#">เพิ่มสมาชิก</a>
         <a href="addprice.php">ค่าหอ</a>
-        <a href="#">Contact</a>
         <a href="Logout.php" >Log Out</a>
     </div>
 
     <form action="register.php" method="GET" >
         <div class="container">
             
-            <h1>Add Renter</h1>
+            <h1>เพิ่มสมาชิก</h1>
             <input type="text" name="NAMEA"  placeholder="Name" required class="label-input"> <br>
             <input type="text" name="Username" placeholder="Username" required class="label-input"> <br>
             <input type="password" name="Password" placeholder="Password" required class="label-input"> <br>

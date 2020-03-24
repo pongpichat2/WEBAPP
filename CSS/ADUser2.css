@@ -80,6 +80,9 @@ body {
     position: fixed;
     font-family: 'Gotu', sans-serif;
 }
+.container h1{
+  font-family: 'Mali', cursive;
+}
 
 .label-input {
     margin-bottom: 0.6rem;

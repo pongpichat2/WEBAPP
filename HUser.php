@@ -26,6 +26,7 @@
             document.getElementById("mySidebar").style.width = "0";
             document.getElementById("main").style.marginLeft= "0";
             }
+            
 </script>
 <style>
     .sidepanel h2{
@@ -44,7 +45,7 @@
         <h2>ROOM : <?php echo $_SESSION['IDRoom'];?></h2>
         <a href="#" class="closebtn" onclick="closeNav()">×</a>  
         <a href="HUser.php">เช็คค่าหอ</a>
-        <a href="#">Contact</a>
+        <a href="payment.php">PAYMENT</a>
         <a href="Logout.php" >Log Out</a>
     </div>
 
@@ -56,6 +57,8 @@
         if(mysqli_num_rows($result) == 1){
             $row = mysqli_fetch_assoc($result);
             $sum1 = $row['priceR'] + $row['eletric']*7 + $row['water']*15;
+
+            $_SESSION['SUM'] = $sum1;
         }
         
     ?>
@@ -70,7 +73,7 @@
         <b>=</b>
         <h3>รวม &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <input type="text"  class ="Sumpay" value="<?php echo $sum1 ?>" readonly> บาท.</h3><br>
 
-        <a href="#"><button name ="buttonpay">Payment</button></a>
+        <a href="payment.php"><button name ="buttonpay" onclick="myFunction()">Payment</button></a>
     </div>
 </body>
 </html>
