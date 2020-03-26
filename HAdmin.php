@@ -33,71 +33,7 @@
             return confirm("คุณต้องการแก้ไขข้อมูลผู้เช่า ?");
         }
     </script>
-    <!-- <style>
-        .searchbar{
-            text-align: center;
-        }
-        form.example input[type=text] {
-            padding: 12px;
-            font-size: 20px;
-            border: 2px solid ;
-            text-align: center;
-            width: 25%;
-            background: #f1f1f1;
-            transition: 0.4s;
-            font-family: 'Mali', cursive;
-            font-weight: bold;
-        }
-        form.example input[type=text]:focus {
-
-            border: 4px solid red;
-            width: 40%;
-            
-        }
-        form.example .Bsearch {
-            width: 50px;
-            padding: 12px;
-            background: #2196F3;
-            color: white;
-            font-size: 20px;
-            border: 2px solid ;
-        }
-        form.example .Bsearch:hover {
-            background: #0b7dda;
-        }
-        .Notpay{
-            width: 70px;
-            height: 35px;
-            background: white;
-            border: none;
-            font-family: 'Mali', cursive;
-            font-weight: bold;
-            transition: 0.5s;
-        }
-        .Notpay:hover{
-            width: 90px;
-            height: 55px;
-            background: yellow;
-            border: 3px solid ;
-            font-size:18px; 
-        }
-        .pay{
-            width: 70px;
-            height: 35px;
-            background: white;
-            border: none;
-            font-family: 'Mali', cursive;
-            font-weight: bold;
-            transition: 0.5s;
-        }
-        .pay:hover{
-            width: 90px;
-            height: 55px;
-            background: yellow;
-            border: 3px solid ;
-            font-size:18px; 
-        }
-    </style> -->
+    
    
     
 </head>
@@ -127,7 +63,7 @@
         <h1>รายชื่อผู้เช่า</h1><br>
         <div class="searchbar">
             <form class="example" action="">
-                <input type="text" placeholder="ค้นหา" name="textS">
+                <input type="text" placeholder="ค้นหา" name="textS" required>
                 <button type="submit" class="Bsearch"><i class="fa fa-search"></i></button>
             </form><br>
             <form action="" method="get">
@@ -148,8 +84,7 @@
           </tr>
           <?php
             // 2.SELECT
-            $sql = "SELECT UserID, NAME, Username, IDRoom, pstatus.Status FROM register 
-                    INNER JOIN pstatus ON register.SPrice = pstatus.SPrice WHERE register.Status = 'user' ";
+            $sql = "SELECT * FROM register INNER JOIN pstatus ON register.SPrice = pstatus.SPrice WHERE register.Status = 'user'";
             
             if(isset($_GET['textS'])){ 
                 $textS = $_GET['textS'];
@@ -174,10 +109,11 @@
                     echo "<Form action='Update.php'>";
                         echo "<tr>";
                         echo "<td class='cos2'><input type = 'text' value =" . $row["UserID"] . " readonly name='UserID' class='IDRoom'> </td>";
-                        echo "<td class='cos2'><input type = 'text' name ='NAME' value =" . $row["NAME"] . "> </td>";
-                        echo "<td class='cos2'><input type = 'text' name = 'Username' value =" . $row["Username"] . "> </td>";
-                        echo "<td class='cos2'><input type = 'text' name = 'IDRoom' value =" . $row["IDRoom"] . " </td>";
-                        echo "<td class='cos2'><input type = 'text' readonly  value =" . $row["Status"] . " </td>";
+                        echo "<td class='cos2'><input type = 'text' name ='NAME' value =" . $row["NAME"] . " required> </td>";
+                        echo "<td class='cos2'><input type = 'text' name = 'Username' value =" . $row["Username"] . " required> </td>";
+                        echo "<td class='cos2'><input type = 'text' name = 'IDRoom' value =" . $row["IDRoom"] . " required</td>";
+                        echo "<td class='cos2'><input type = 'text'  name = 'status' required 
+                                value =" . $row["Status"] . " </td>";
                         echo "<td><input type='Submit' value='Edit' class='Edit' name='Update' onClick='return confirmEdit()'></td>"; 
                         echo "<td><input type='Submit' value='Delete' class='DELETE' name='Update' onClick='return confirmDelete()'> </td>";
                         echo "</tr>";

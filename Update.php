@@ -5,15 +5,28 @@ $IDRoom = "";
 $UserID = "";
 $name = "";
 $username ="";
+$status = "";
 
 if(isset($_GET['Update'])) $Update = $_GET['Update'];
 if(isset($_GET['UserID'])) $UserID = $_GET['UserID'];
 if(isset($_GET['NAME'])) $name = $_GET['NAME'];
 if(isset($_GET['Username'])) $username = $_GET['Username'];
 if(isset($_GET['IDRoom'])) $IDRoom = $_GET['IDRoom'];
+if(isset($_GET['status'])) $status = $_GET['status'];
 
 if($Update == 'Edit'){
-    $sql = "UPDATE register SET NAME = '$name', Username ='$username', IDRoom = '$IDRoom' WHERE UserID = '$UserID'";
+    $sql = "UPDATE register SET ";
+
+    if ($status == 'ชำระ'){
+        $sql .= "NAME = '$name', Username ='$username', IDRoom = '$IDRoom', SPrice = '2' WHERE UserID = '$UserID'";
+        
+    }
+    else if ($status == 'ยังไม่ได้ชำระ'){
+        $sql .= "NAME = '$name', Username ='$username', IDRoom = '$IDRoom', SPrice = '1' WHERE UserID = '$UserID'";
+    }
+    else{
+        header("Location: HAdmin.php");
+    }
 
     if (mysqli_query($conn, $sql)) {
         header("Location: HAdmin.php");

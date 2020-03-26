@@ -22,7 +22,7 @@
     if ($conn->query($sql) == TRUE) {
         if($conn->query($sql1) == TRUE){
         header("Location:adduser.php");}
-    } 
+     } 
     else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
