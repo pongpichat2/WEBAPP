@@ -17,11 +17,11 @@ if(isset($_GET['status'])) $status = $_GET['status'];
 if($Update == 'Edit'){
     $sql = "UPDATE register SET ";
 
-    if ($status == 'ชำระ'){
+    if ($status == 'จ่ายแล้ว'){
         $sql .= "NAME = '$name', Username ='$username', IDRoom = '$IDRoom', SPrice = '2' WHERE UserID = '$UserID'";
         
     }
-    else if ($status == 'ยังไม่ได้ชำระ'){
+    else if ($status == 'ค้างจ่าย'){
         $sql .= "NAME = '$name', Username ='$username', IDRoom = '$IDRoom', SPrice = '1' WHERE UserID = '$UserID'";
     }
     else{

@@ -27,9 +27,10 @@
             
     }
     else{
-        echo "เข้าไม่ได้";
-        echo "<br>";
-        echo "<a href='index.html'>Go to Login</a>";
+        echo "<script>";
+         echo "alert('รหัสผ่านผิด !!!');";
+         echo "window.location='index.html';";
+        echo "</script>";
     }
 ?>
 

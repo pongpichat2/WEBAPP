@@ -51,29 +51,43 @@
 
     <?php
         $Room = $_SESSION['IDRoom'];
-        $sql = "SELECT * FROM room WHERE IDRoom = $Room";
+        $sql = "SELECT * FROM billsum WHERE IDRoom = '$Room'";
         $result = mysqli_query($conn, $sql);
 
-        if(mysqli_num_rows($result) == 1){
-            $row = mysqli_fetch_assoc($result);
-            $sum1 = $row['priceR'] + $row['eletric']*7 + $row['water']*15;
+        if(mysqli_num_rows($result) > 0){
+            $sqlsum = "SELECT SUM(priceR) AS 'sumRoom' FROM billsum WHERE IDRoom = '$Room'";
+            $Resum = mysqli_query($conn, $sqlsum);
+            $row = mysqli_fetch_assoc($Resum);
+            $row['sumRoom'];
 
-            $_SESSION['SUM'] = $sum1;
+            $sqlsum1 = "SELECT SUM(eletric) AS 'sumEle' FROM billsum WHERE IDRoom = '$Room'";
+            $Resum1 = mysqli_query($conn, $sqlsum1);
+            $row1 = mysqli_fetch_assoc($Resum1);
+            $row1['sumEle'];
+            
+            $sqlsum2 = "SELECT SUM(water) AS 'sumWater' FROM billsum WHERE IDRoom = '$Room'";
+            $Resum2 = mysqli_query($conn, $sqlsum2);
+            $row2 = mysqli_fetch_assoc($Resum2);
+            $row2['sumWater'];
+
+            $sumfull = $row['sumRoom']+ (($row1['sumEle']*7)+($row2['sumWater']*9));
+
+            $_SESSION['SUMFU'] = $sumfull;
         }
         
     ?>
 
     <div class ="Billpay">
-        <h2>เดือน : <?php echo $row['Month']; echo"&nbsp;&nbsp;"; echo" ปี:&nbsp;";  echo $row['Year'];?></h2>
-        <h3>ค่าห้อง &nbsp;&nbsp;:&nbsp; <input type="text" value="<?php echo $row['priceR'] ?>" readonly> บาท.</h3>
+        <h2>ยอดที่ต้องชำระ</h2>
+        <h3>ค่าห้อง &nbsp;&nbsp;:&nbsp; <input type="text" value="<?php echo $row['sumRoom']; ?>" readonly> บาท.</h3>
         <b>+</b>
-        <h3>ค่าไฟ &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <input type="text" value="<?php echo $row['eletric']*7 ?> = <?php echo $row ['eletric']?>หน่วย x 7" readonly> บาท.</h3>
+        <h3>ค่าไฟ &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <input type="text" value="<?php echo $row1['sumEle']*7 ?> = <?php echo $row1['sumEle'];?>หน่วย x 7" readonly> บาท.</h3>
         <b>+</b>
-        <h3>ค่าน้ำ &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <input type="text" value="<?php echo $row['water']*15 ?> = <?php echo $row ['water']?>หน่วย x 15" readonly> บาท.</h3>
+        <h3>ค่าน้ำ &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <input type="text" value="<?php echo $row2['sumWater']*9 ?> = <?php echo $row2['sumWater'];?>หน่วย x 9" readonly> บาท.</h3>
         <b>=</b>
-        <h3>รวม &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <input type="text"  class ="Sumpay" value="<?php echo $sum1 ?>" readonly> บาท.</h3><br>
+        <h3>รวม &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <input type="text"  class ="Sumpay" value="<?php echo $sumfull ?>" readonly> บาท.</h3><br>
 
-        <a href="payment.php"><button name ="buttonpay" onclick="myFunction()">Payment</button></a>
+        <a href="payment.php"><button name ="buttonpay">Payment</button></a>
     </div>
 </body>
 </html>

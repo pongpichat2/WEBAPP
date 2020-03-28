@@ -83,7 +83,6 @@ body {
   font-family: 'Gotu', sans-serif;
   font-size: 25px;
   border-collapse: collapse ;
-  
  }
 .HeadADD .cos1{
   background-color: #009879;
@@ -174,6 +173,7 @@ form.example .Bsearch {
 }
 form.example .Bsearch:hover {
   background: #0b7dda;
+  color: gold;
 }
 .Notpay{
   width: 70px;
@@ -206,4 +206,35 @@ form.example .Bsearch:hover {
   background: yellow;
   border: 3px solid ;
   font-size:18px; 
+}
+.ALL{
+  width: 70px;
+  height: 35px;
+  background: white;
+  border: none;
+  font-family: 'Mali', cursive;
+  font-weight: bold;
+  transition: 0.5s;
+}
+.ALL:hover{
+  width: 90px;
+  height: 55px;
+  background: rgb(0, 255, 55);
+  border: 3px solid ;
+  font-size:18px; 
+  color: rgb(255, 255, 255);
+}
+.counthmember{
+  width: 320px;
+  height: 200px;
+  background: rgba(8, 221, 236, 0.4);
+  float: right;
+  margin: 2% 1%;
+  border-radius: 10px;
+  font-family: 'Mali', cursive;
+  box-shadow:0 0 16px rgb(0, 0, 0);
+}
+.counthmember .textCount{
+  margin-left: 5%;
+  font-size: 20px;
 }

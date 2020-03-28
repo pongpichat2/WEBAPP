@@ -67,7 +67,7 @@ session_start();
               
 
                 <div class="Textshow">
-                    <h1>ชำระ : <input type="text" class="Sum" value="<?php echo$_SESSION['SUM'];  ?>" readonly>&nbsp;บาท.</h1>
+                    <h1>ชำระ : <input type="text" class="Sum" value="<?php echo$_SESSION['SUMFU'];  ?>" readonly>&nbsp;บาท.</h1>
                 </div>
 
         
