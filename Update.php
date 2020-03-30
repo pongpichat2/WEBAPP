@@ -24,9 +24,6 @@ if($Update == 'Edit'){
     else if ($status == 'ค้างจ่าย'){
         $sql .= "NAME = '$name', Username ='$username', IDRoom = '$IDRoom', SPrice = '1' WHERE UserID = '$UserID'";
     }
-    else{
-        header("Location: HAdmin.php");
-    }
 
     if (mysqli_query($conn, $sql)) {
         header("Location: HAdmin.php");

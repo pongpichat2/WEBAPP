@@ -97,7 +97,7 @@
                     <option value="พฤศจิกายน">พฤศจิกายน</option>
                     <option value="ธันวาคม">ธันวาคม</option>
                 </select> 
-                &nbsp;&nbsp; ปี : <input type="text" class="year" name="year" placeholder="พ.ศ." required></h3><br><br>
+                <br><br><br><br>
                 <input type="submit" value="ADD" class="ADDSubmit" >
                 <input type="reset" value="RESET" class="Reset">
             </form>
@@ -112,7 +112,7 @@
         $eletric = "";
         $water = "";
         $month = "";
-        $year = "";
+
         // settype($_GET["Rprice"], "integer");
         // settype($_GET["eletric"], "integer");
         // settype($_GET["water"], "integer");
@@ -124,21 +124,33 @@
         if(isset($_GET["eletric"])) $eletric = $_GET["eletric"];
         if(isset($_GET["water"])) $water = $_GET["water"];
         if(isset($_GET["Month"])) $month = $_GET["Month"];
-        if(isset($_GET["year"])) $year = $_GET["year"];
 
-        $sqlUpDate = "INSERT INTO billsum (IDRoom, priceR, eletric , water , Month, Year) value ('$IDRoom', '$Rprice', '$eletric', '$water', '$month', '$year')";
-        // $sqlUpDate = "UPDATE room SET priceR = '$Rprice', eletric = '$eletric', water = '$water', Month = '$month', Year = '$year' ";
-        // $sqlUpDate .= "WHERE IDRoom = '$IDRoom'";
-
-        $sqlUpDateRe = "UPDATE register SET SPrice = '$SPrice' WHERE IDRoom = '$IDRoom'"; 
-
-        if ($conn->query($sqlUpDate) == TRUE) {
-            if($conn->query($sqlUpDateRe) == TRUE){
-            }
-         } 
-        else {
-            
+        $Checkmember2 = "SELECT * FROM billsum WHERE IDRoom = '$IDRoom' AND Month ='$month'";
+        $query2 = mysqli_query($conn, $Checkmember2);
+        $result2 = mysqli_num_rows($query2);
+        if($result2 == 1){
+            echo "<script>";
+            echo"alert('เดือนนี้มีค่าเช่าแล้ว');";
+            echo "window.history.back();";
+            echo "</script>"; 
         }
+
+        $Checkmember = "SELECT * FROM billsum WHERE IDRoom = '$IDRoom' AND Month ='$month'";
+        $query = mysqli_query($conn, $Checkmember);
+        $result = mysqli_num_rows($query);
+        if($result == NULL){
+            $sqlUpDate = "INSERT INTO billsum (IDRoom, priceR, eletric , water , Month) value ('$IDRoom', '$Rprice', '$eletric', '$water', '$month')";
+
+
+            $sqlUpDateRe = "UPDATE register SET SPrice = '$SPrice' WHERE IDRoom = '$IDRoom'"; 
+
+            if ($conn->query($sqlUpDate) == TRUE) {
+                if($conn->query($sqlUpDateRe) == TRUE){
+                }
+            } 
+        
+        }
+        
     ?>
     
     

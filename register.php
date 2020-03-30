@@ -12,18 +12,22 @@
     
    
     //เช็คข้อมูลซ้ำ
-    $Checkmember = "SELECT * FROM register WHERE Username = '$username' OR IDRoom ='$room'";
-    $query = mysqli_query($conn, $Checkmember);
-    $result = mysqli_num_rows($query);
-
-    if($result > 0){
+    
+    
+    $Checkmember2 = "SELECT * FROM register WHERE IDRoom ='$room'";
+    $query2 = mysqli_query($conn, $Checkmember2);
+    $result2 = mysqli_num_rows($query2);
+    if($result2 > 0){
         echo "<script>";
-        echo"alert('ข้อมูล Username หรือ Room ซ้ำค้าบ!!!!');";
+        echo"alert('มี Room ซ้ำค้าบ!!!!');";
         echo "window.history.back();";
         echo "</script>"; 
     }
 
-    else{
+    $Checkmember = "SELECT * FROM register";
+    $query = mysqli_query($conn, $Checkmember);
+    $result = mysqli_num_rows($query);
+    if($result > 0){
         //เพิ่มข้อมูล
         $sql = "INSERT INTO register (NAME, Username, PASSWORD, IDRoom, Status)
                         Value ('$name', '$username', '$password', '$room', '$status')";

@@ -25,6 +25,9 @@
             document.getElementById("mySidebar").style.width = "0";
             document.getElementById("main").style.marginLeft= "0";
             }
+        function confirmDelete() {
+        return confirm("คุณต้องการลบยอดค้าง ?");
+        }
     </script>
     
 </head>
@@ -75,8 +78,11 @@
             <form class="example" action="">
                 <input type="text" placeholder="ค้นหา( NAME,Room.NO )" name="textS" required>
                 <button type="submit" class="Bsearch"><i class="fa fa-search"></i></button>
-                <a href="HAdmin.php"><button name ="Bsearch" value="3" class="ALL">ทั้งหมด</button></a>
+                
             </form><br>
+
+            <form action="" method="get">
+            <a href="HAdmin.php"><button name ="Bsearch" value="3" class="ALL">ทั้งหมด</button></a></form>
             
         </div>
         <table class="HeadADD">

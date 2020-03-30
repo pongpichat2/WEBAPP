@@ -42,7 +42,7 @@ session_start();
     <button class="openbtn" onclick="openNav()">☰</button>
     <div id="mySidebar" class="sidepanel">
         <h1>NAME : <?php echo $_SESSION['name'];?></h1>
-        <h2>ROOM : <?php echo $_SESSION['IDRoom'];?></h2>
+        <h2>ROOM : <?php echo $_SESSION['room']; ?></h2>
         <a href="#" class="closebtn" onclick="closeNav()">×</a>  
         <a href="HUser.php">เช็คค่าหอ</a>
         <a href="payment.php">PAYMENT</a>

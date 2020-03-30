@@ -15,7 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Mali&display=swap" rel="stylesheet">
     <title>Document</title>
-    <link rel="stylesheet" href="CSS/HAdmin6.css">
+    <link rel="stylesheet" href="CSS/HAdmin7.css">
     <script>
         function openNav() {
             document.getElementById("mySidebar").style.width = "300px";
@@ -57,7 +57,7 @@
         <div class="textCount">
             <h3>จำนวนผู้เช่าทั้งหมด : <?php echo $row['count'] ?> คน</h3>
             <h4>ผู้ค้างจ่าย : <?php echo $row1['count'];?> คน</h4>
-            <h4>ผู้ชำระแล้ว : <?php echo $row2['count']?> คน</h4>
+            <h4>ผู้จ่ายแล้ว : <?php echo $row2['count']?> คน</h4>
         </div>
     </div>
 
@@ -133,22 +133,44 @@
                         // $resultMoney = mysqli_query($conn, $sql1);
                         // $rowMoney = mysqli_fetch_assoc($resultMoney);
                     echo "<div class='TableShow'>";
+                    if($row["SPrice"] == "1"){
                     echo "<Form action='Update.php'>";
                         echo "<tr>";
                         echo "<td class='cos2'><input type = 'text' value =" . $row["UserID"] . " readonly name='UserID' class='IDRoom'></td>";
                         echo "<td class='cos2'><input type = 'text' name ='NAME' value =" . $row["NAME"] . " required> </td>";
                         echo "<td class='cos2'><input type = 'text' name = 'Username' value =" . $row["Username"] . " required> </td>";
                         echo "<td class='cos2'><input type = 'text' name = 'IDRoom' value =" . $row["IDRoom"] . " required</td>";
-                        // echo "<td class='cos2'><input type = 'text' name = 'Money' value =" . $rowMoney["SUM"] . " readonly </td>";
-                        echo "<td class='cos2'><input type = 'text'  name = 'status' required 
-                                value =" . $row["Status"] . " </td>";
+                        echo "<td class='cos2'><select type = 'text' name='status'>
+                            <option value=''>" . $row["Status"] ."</option>
+                            <option value='จ่ายแล้ว'>จ่ายแล้ว</option> </td> "; 
+                        // echo "<td class='cos2'><input type = 'text'  name = 'status' required 
+                        //         value =" . $row["Status"] . " </td>";
                         echo "<td><input type='Submit' value='Edit' class='Edit' name='Update' onClick='return confirmEdit()'></td>"; 
                         echo "<td><input type='Submit' value='Delete' class='DELETE' name='Update' onClick='return confirmDelete()'> </td>";
                         echo "</tr>";
                     echo "</Form>";
                     echo "</div>";
                         }
+                    if($row["SPrice"] == "2"){
+                        echo "<Form action='Update.php'>";
+                        echo "<tr>";
+                        echo "<td class='cos2'><input type = 'text' value =" . $row["UserID"] . " readonly name='UserID' class='IDRoom'></td>";
+                        echo "<td class='cos2'><input type = 'text' name ='NAME' value =" . $row["NAME"] . " required> </td>";
+                        echo "<td class='cos2'><input type = 'text' name = 'Username' value =" . $row["Username"] . " required> </td>";
+                        echo "<td class='cos2'><input type = 'text' name = 'IDRoom' value =" . $row["IDRoom"] . " required</td>";
+                        echo "<td class='cos2'><select type = 'text' name='status' class = 'status'>
+                            <option value=''>" . $row["Status"] ."</option>
+                            <option value='ค้างจ่าย'>ค้างจ่าย</option> </td> "; 
+                        // echo "<td class='cos2'><input type = 'text'  name = 'status' required 
+                        //         value =" . $row["Status"] . " </td>";
+                        echo "<td><input type='Submit' value='Edit' class='Edit' name='Update' onClick='return confirmEdit()'></td>"; 
+                        echo "<td><input type='Submit' value='Delete' class='DELETE' name='Update' onClick='return confirmDelete()'> </td>";
+                        echo "</tr>";
+                    echo "</Form>";
+                    echo "</div>";
                     }
+                    }
+                }
             ?>
         </table>
     </div>

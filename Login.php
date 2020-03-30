@@ -4,10 +4,10 @@
     
     $username = $_POST['Username'];
     $password = $_POST['Password'];
+
     
     //เช็ค ข้อมูลในDatabase ใน ATB1 Username and Password
-    $sql = "SELECT * FROM register WHERE Username= '".$username."' AND PASSWORD = '".$password."' limit 1";
-
+    $sql = "SELECT * FROM register WHERE Username= '$username' AND PASSWORD = '$password' limit 1";
     //ถ้าเจอ
     $result = mysqli_query($conn, $sql);
     
@@ -16,6 +16,7 @@
             $row = mysqli_fetch_assoc($result);
 
             $_SESSION['username'] = $username;
+            $_SESSION['pass'] = $password;
             $_SESSION['name'] = $row['NAME'];
             $_SESSION['IDRoom'] = $row['IDRoom'];
             $_SESSION['Status'] = $row['Status'];

@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Mali&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/HomeU3.css">
+    <link rel="stylesheet" href="CSS/HomeU2.css">
     <title>Mungmee</title>
 <script>
         function openNav() {
@@ -29,10 +29,7 @@
             document.getElementById("mySidebar").style.width = "0";
             document.getElementById("main").style.marginLeft= "0";
             }
-        function Showroom(){
-            var room = document.formRoom.formRoomD.value;
-            document.getElementById("roomIDr").innerHTML = room;
-        }
+            
 </script>
 <style>
     .sidepanel h2{
@@ -49,25 +46,26 @@
     <?php 
     $roomID = "";
     if(isset($_GET['roomID'])) $roomID = $_GET['roomID'];
+
+    echo  $_SESSION['room'];
     ?>
 
     <div id="mySidebar" class="sidepanel">
         <h1>NAME : <?php echo $_SESSION['name'];?></h1>
-        <form action="" method="get" name="formRoom">
-        <h2>ROOM : <select name="roomID" id="roomID" class="IDRoom">
+        <form action="" method="get">
+        <h2>ROOM : <select name="roomID" class="IDRoom">
                     <?php 
                         $sql = "SELECT * FROM register WHERE Username= '$user' AND PASSWORD = '$pass'";
                         $result = mysqli_query($conn, $sql);
                         
-                        echo "<option name='formRoomD' id='roomIDr' class= 'option'>ห้อง</option>";
+                     
                         if (mysqli_num_rows($result) > 0) {
                             while($row = mysqli_fetch_assoc($result)){
-                                
-                                echo "<option name='formRoomD' id='roomIDr' class= 'option'value=" . $row["IDRoom"].">" .$row["IDRoom"] ."</option>";
+                                echo "<option  class= 'option'value=" . $_SESSION['room'].">" .$_SESSION['room'] ."</option>";
                             }
                         }
- 
-                        ?></select>&nbsp;&nbsp;&nbsp;<input type="submit" value="View" class="Bview" onsubmit="Showroom()">
+                     
+                        ?></select>&nbsp;&nbsp;&nbsp;<input type="submit" value="View" class="Bview">
         </form>
                 </select></h2>
         <a href="#" class="closebtn" onclick="closeNav()">×</a>  
@@ -77,34 +75,8 @@
     </div>
 
     <?php
-        $sql = "SELECT * FROM billsum WHERE IDRoom = '$idroom'";
-        $result = mysqli_query($conn, $sql);
-
-        if(mysqli_num_rows($result) > 0){
-            $sqlsum = "SELECT SUM(priceR) AS 'sumRoom' FROM billsum WHERE IDRoom = '$idroom'";
-            $Resum = mysqli_query($conn, $sqlsum);
-            $row = mysqli_fetch_assoc($Resum);
-            $row['sumRoom'] = 0;
-
-            $sqlsum1 = "SELECT SUM(eletric) AS 'sumEle' FROM billsum WHERE IDRoom = '$idroom'";
-            $Resum1 = mysqli_query($conn, $sqlsum1);
-            $row1 = mysqli_fetch_assoc($Resum1);
-            $row1['sumEle'] = 0;
-            
-            $sqlsum2 = "SELECT SUM(water) AS 'sumWater' FROM billsum WHERE IDRoom = '$idroom'";
-            $Resum2 = mysqli_query($conn, $sqlsum2);
-            $row2 = mysqli_fetch_assoc($Resum2);
-            $row2['sumWater'] = 0;
-
-            $sumfull = 0;
-
-            $_SESSION['SUMFU'] = $sumfull;
-        }
-    ?>
-
-    <?php
-    // $roomID = "";
-    // if(isset($_GET['roomID'])) $roomID = $_GET['roomID'];
+    $roomID = "";
+    if(isset($_GET['roomID'])) $roomID = $_GET['roomID'];
 
     $_SESSION['room'] = $roomID ;
     $sql = "SELECT * FROM billsum WHERE IDRoom = '$roomID'";
@@ -136,9 +108,8 @@
     ?>
 
     <div class ="Billpay">
-        <h2>ยอดที่ต้องชำระ &nbsp;&nbsp;ของห้อง : <?php echo $roomID ?></h2>
-
-        <h3>ค่าห้อง &nbsp;&nbsp;&nbsp; <input type="text" value="<?php echo $row['sumRoom']; ?>" readonly> บาท.</h3>
+        <h2>ยอดที่ต้องชำระ</h2>
+        <h3>ค่าห้อง &nbsp;&nbsp;:&nbsp; <input type="text" value="<?php echo $row['sumRoom']; ?>" readonly> บาท.</h3>
         <b>+</b>
         <h3>ค่าไฟ &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <input type="text" value="<?php echo $row1['sumEle']*7 ?> = <?php echo $row1['sumEle'];?>หน่วย x 7" readonly> บาท.</h3>
         <b>+</b>

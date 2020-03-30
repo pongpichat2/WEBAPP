@@ -38,6 +38,26 @@ body {
     transition: 0.3s;
     font-family: 'Mali', cursive;
 }
+.sidepanel select{
+  width: 80px;
+  height: 50px;
+  font-size: 16px;
+  border-collapse: collapse ;
+  text-align: center;
+  border: 2px solid;
+  font-family: 'Mali', cursive;
+  color: #000;
+  font-weight: bold;
+}
+.sidepanel .Bview{
+  font-family: 'Mali', cursive;
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgb(51, 255, 0);
+  color: #000;
+  background: white;
+  transition: 0.5s;
+}
   
 .sidepanel a:hover {
     color: #f1f1f1;
